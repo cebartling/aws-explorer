@@ -37,6 +37,8 @@ javafx {
 }
 
 dependencies {
+    implementation(platform("software.amazon.awssdk:bom:2.20.157"))
+    implementation("software.amazon.awssdk:iam")
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")

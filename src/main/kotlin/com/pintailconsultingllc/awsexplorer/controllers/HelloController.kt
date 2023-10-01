@@ -1,4 +1,4 @@
-package com.pintailconsultingllc.awsexplorer
+package com.pintailconsultingllc.awsexplorer.controllers
 
 import javafx.fxml.FXML
 import javafx.scene.control.Label
