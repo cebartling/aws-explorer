@@ -16,6 +16,8 @@ repositories {
 
 ext {
     junitVersion = '5.9.2'
+    fxGuiceVersion = '8.0.0'
+    guiceVersion = '3.0'
 }
 
 
@@ -39,6 +41,11 @@ javafx {
 dependencies {
     implementation(platform("software.amazon.awssdk:bom:2.20.157"))
     implementation("software.amazon.awssdk:iam")
+    // https://mvnrepository.com/artifact/com.cathive.fx/fx-guice
+    implementation("com.cathive.fx:fx-guice:${fxGuiceVersion}")
+    // https://mvnrepository.com/artifact/com.google.inject/guice
+    implementation("com.google.inject:guice:${guiceVersion}")
+
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
