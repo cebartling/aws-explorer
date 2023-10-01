@@ -13,6 +13,7 @@ class AWSExplorerApplication : Application() {
     override fun start(stage: Stage) {
         val menu = Menu("Menu 1")
         val signInMenuItem = MenuItem("Sign in...")
+        signInMenuItem.setOnAction { e -> println("Menu Item 1 Selected") }
         menu.items.add(signInMenuItem)
 
         val menuBar = MenuBar()
