@@ -9,7 +9,7 @@ import javafx.scene.layout.VBox
 import javafx.stage.Stage
 
 
-class HelloApplication : Application() {
+class AWSExplorerApplication : Application() {
     override fun start(stage: Stage) {
         val menu = Menu("Menu 1")
         val signInMenuItem = MenuItem("Sign in...")
@@ -29,5 +29,5 @@ class HelloApplication : Application() {
 }
 
 fun main() {
-    Application.launch(HelloApplication::class.java)
+    Application.launch(AWSExplorerApplication::class.java)
 }
