@@ -13,6 +13,7 @@
             <menus>
                 <Menu text="File">
                     <items>
+                        <MenuItem text="Sign in..." onAction="#signIn"/>
                         <MenuItem text="Exit" onAction="#exit"/>
                     </items>
                 </Menu>
@@ -24,5 +25,11 @@
             </menus>
         </MenuBar>
     </top>
+    <center>
+        <fx:include fx:id="signInView" source="sign-in-view.fxml"/>
+    </center>
+    <bottom>
+        <fx:include source="bottom-status-view.fxml" fx:id="bottomStatusView"/>
+    </bottom>
 
 </BorderPane>
