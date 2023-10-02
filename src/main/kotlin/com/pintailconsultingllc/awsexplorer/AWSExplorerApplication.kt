@@ -1,7 +1,7 @@
 package com.pintailconsultingllc.awsexplorer
 
-import com.gluonhq.ignite.guice.GuiceContext
-import com.google.inject.Module
+import com.google.inject.Guice
+import com.google.inject.Injector
 import com.pintailconsultingllc.awsexplorer.modules.GuiceModule
 import javafx.application.Application
 import javafx.scene.Scene
@@ -10,20 +10,16 @@ import javafx.scene.control.MenuBar
 import javafx.scene.control.MenuItem
 import javafx.scene.layout.VBox
 import javafx.stage.Stage
-import java.util.*
 
 
 class AWSExplorerApplication : Application() {
 
-    private val context = GuiceContext(
-        this
-    ) {
-        Arrays.asList<Module>(
-            GuiceModule()
-        )
-    }
+
+    private var injector: Injector? = null
 
     override fun start(stage: Stage) {
+        injector = Guice.createInjector(GuiceModule())
+
         val menu = Menu("Menu 1")
         val signInMenuItem = MenuItem("Sign in...")
         signInMenuItem.setOnAction { _ -> println("Menu Item 1 Selected") }

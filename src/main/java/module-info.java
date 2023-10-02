@@ -3,7 +3,7 @@ module com.pintailconsultingllc.awsexplorer {
     requires javafx.fxml;
     requires kotlin.stdlib;
     requires com.google.guice;
-    requires ignite.guice;
+    requires jakarta.inject;
 
 
     opens com.pintailconsultingllc.awsexplorer.controllers to javafx.fxml;

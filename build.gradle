@@ -16,8 +16,7 @@ repositories {
 
 ext {
     junitVersion = '5.9.2'
-    guiceVersion = '7.0.0'
-    igniteGuiceVersion = '1.2.2'
+    guiceVersion = '6.0.0'
 }
 
 
@@ -42,8 +41,8 @@ dependencies {
     implementation(platform("software.amazon.awssdk:bom:2.20.157"))
     implementation("software.amazon.awssdk:iam")
     // https://mvnrepository.com/artifact/com.google.inject/guice
-    implementation("com.google.inject:guice:${guiceVersion}")
-    implementation("com.gluonhq:ignite-guice:${igniteGuiceVersion}")
+    implementation("com.google.inject:guice:7.0.0")
+
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
