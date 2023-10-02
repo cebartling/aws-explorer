@@ -14,7 +14,6 @@ import javafx.stage.Stage
 
 class AWSExplorerApplication : Application() {
 
-
     private var injector: Injector? = null
 
     override fun start(stage: Stage) {
