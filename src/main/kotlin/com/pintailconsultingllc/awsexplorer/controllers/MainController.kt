@@ -1,14 +1,16 @@
 package com.pintailconsultingllc.awsexplorer.controllers
 
-import com.pintailconsultingllc.awsexplorer.AWSExplorerApplication
 import javafx.event.ActionEvent
-import javafx.fxml.FXMLLoader
-import javafx.scene.Parent
+import javafx.fxml.FXML
 import javafx.scene.layout.AnchorPane
 import javafx.scene.layout.HBox
 
+
 class MainController {
+    @FXML
     lateinit var bottomStatusView: HBox
+
+    @FXML
     lateinit var signInView: AnchorPane
 
     fun exit(actionEvent: ActionEvent) {
