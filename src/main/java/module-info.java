@@ -4,6 +4,9 @@ module com.pintailconsultingllc.awsexplorer {
     requires kotlin.stdlib;
     requires com.google.guice;
     requires jakarta.inject;
+    requires software.amazon.awssdk.auth;
+    requires software.amazon.awssdk.regions;
+    requires software.amazon.awssdk.services.cloudformation;
 
 
     opens com.pintailconsultingllc.awsexplorer.controllers to javafx.fxml, com.google.guice;

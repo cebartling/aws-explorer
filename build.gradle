@@ -16,7 +16,8 @@ repositories {
 
 ext {
     junitVersion = '5.9.2'
-    guiceVersion = '6.0.0'
+    guiceVersion = '7.0.0'
+    awsSdkVersion = '2.20.159'
 }
 
 
@@ -38,10 +39,14 @@ javafx {
 }
 
 dependencies {
-    implementation(platform("software.amazon.awssdk:bom:2.20.157"))
+    implementation(platform("software.amazon.awssdk:bom:${awsSdkVersion}"))
     implementation("software.amazon.awssdk:iam")
     // https://mvnrepository.com/artifact/com.google.inject/guice
-    implementation("com.google.inject:guice:7.0.0")
+    implementation("com.google.inject:guice:${guiceVersion}")
+    // https://mvnrepository.com/artifact/software.amazon.awssdk/cloudformation
+    implementation("software.amazon.awssdk:cloudformation:${awsSdkVersion}")
+    // https://mvnrepository.com/artifact/software.amazon.awssdk/secretsmanager
+    implementation("software.amazon.awssdk:secretsmanager:${awsSdkVersion}")
 
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
