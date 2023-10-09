@@ -9,7 +9,8 @@ import java.net.URL
 import java.util.*
 
 interface GuiceFXMLLoader {
-    fun <N> load(url: URL, resources: ResourceBundle?): N
+    fun <N> load(url: URL, resources: ResourceBundle): N
+    fun <N> load(url: URL): N
 }
 
 class GuiceFXMLLoaderImpl : GuiceFXMLLoader {
@@ -20,11 +21,6 @@ class GuiceFXMLLoaderImpl : GuiceFXMLLoader {
      */
     @Inject
     private lateinit var injector: Injector
-
-//    @Inject
-//    fun GuiceFXMLLoader(injector: Injector?) {
-//        this.injector = injector
-//    }
 
     /**
      * Loads an object hierarchy from a FXML document
@@ -42,13 +38,21 @@ class GuiceFXMLLoaderImpl : GuiceFXMLLoader {
      * @see {@link FXMLLoader.load
      */
     @Throws(IOException::class)
-    override fun <N> load(url: URL, resources: ResourceBundle?): N {
+    override fun <N> load(url: URL, resources: ResourceBundle): N {
         val loader = FXMLLoader()
         loader.location = url
         loader.resources = resources
-        loader.controllerFactory = Callback<Class<*>, Any> { controllerClass: Class<*>? ->
-            // Use our Guice injector to fetch an instance of the desired
-            // controller class
+        loader.controllerFactory = Callback { controllerClass: Class<*>? ->
+            injector.getInstance(controllerClass)
+        }
+        return loader.load(url.openStream()) as N
+    }
+
+    @Throws(IOException::class)
+    override fun <N> load(url: URL): N {
+        val loader = FXMLLoader()
+        loader.location = url
+        loader.controllerFactory = Callback { controllerClass: Class<*>? ->
             injector.getInstance(controllerClass)
         }
         return loader.load(url.openStream()) as N

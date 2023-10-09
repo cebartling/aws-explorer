@@ -3,7 +3,6 @@ package com.pintailconsultingllc.awsexplorer.modules
 import com.google.inject.AbstractModule
 import com.pintailconsultingllc.awsexplorer.services.*
 
-
 class GuiceModule : AbstractModule() {
     override fun configure() {
         bind(GuiceFXMLLoader::class.java).to(GuiceFXMLLoaderImpl::class.java)
