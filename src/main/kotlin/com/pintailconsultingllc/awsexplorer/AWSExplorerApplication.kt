@@ -16,7 +16,7 @@ class AWSExplorerApplication : Application() {
     override fun start(stage: Stage) {
         injector = Guice.createInjector(GuiceModule())
         val fxmlLoader = FXMLLoader(AWSExplorerApplication::class.java.getResource("main-view.fxml"))
-        fxmlLoader.setControllerFactory { param -> injector!!.getInstance(param) }
+        fxmlLoader.setControllerFactory { controllerClass -> injector!!.getInstance(controllerClass) }
         val scene = Scene(fxmlLoader.load(), 1024.0, 768.0)
         stage.title = "AWS Explorer"
         stage.scene = scene
