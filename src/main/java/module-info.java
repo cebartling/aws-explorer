@@ -12,5 +12,6 @@ module com.pintailconsultingllc.awsexplorer {
     opens com.pintailconsultingllc.awsexplorer.controllers to javafx.fxml, com.google.guice;
     opens com.pintailconsultingllc.awsexplorer.services to com.google.guice;
     opens com.pintailconsultingllc.awsexplorer.modules to com.google.guice;
+    opens com.pintailconsultingllc.awsexplorer.guice to com.google.guice;
     exports com.pintailconsultingllc.awsexplorer;
 }

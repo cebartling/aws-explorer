@@ -1,6 +1,8 @@
 package com.pintailconsultingllc.awsexplorer.modules
 
 import com.google.inject.AbstractModule
+import com.pintailconsultingllc.awsexplorer.guice.GuiceFXMLLoader
+import com.pintailconsultingllc.awsexplorer.guice.GuiceFXMLLoaderImpl
 import com.pintailconsultingllc.awsexplorer.services.*
 
 class GuiceModule : AbstractModule() {

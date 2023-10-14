@@ -1,4 +1,4 @@
-package com.pintailconsultingllc.awsexplorer.modules
+package com.pintailconsultingllc.awsexplorer.guice
 
 import com.google.inject.Injector
 import jakarta.inject.Inject
