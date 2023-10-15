@@ -1,7 +1,9 @@
 package com.pintailconsultingllc.awsexplorer
 
+import com.google.inject.AbstractModule
 import com.google.inject.Guice
 import com.google.inject.Injector
+import jakarta.inject.Provider
 import com.pintailconsultingllc.awsexplorer.modules.FoobarModule
 import com.pintailconsultingllc.awsexplorer.guice.GuiceFXMLLoader
 import com.pintailconsultingllc.awsexplorer.modules.GuiceModule
@@ -19,7 +21,13 @@ class AWSExplorerApplication : Application() {
     private var injector: Injector? = null
 
     override fun start(stage: Stage) {
-        injector = Guice.createInjector(GuiceModule(), FoobarModule())
+        val instance = this
+        val applicationModule = object : AbstractModule() {
+            override fun configure() {
+                bind(instance.javaClass).toProvider(Provider<AWSExplorerApplication?> { instance })
+            }
+        }
+        injector = Guice.createInjector(GuiceModule(), FoobarModule(), applicationModule)
         val guiceFXMLLoader = injector!!.getInstance(GuiceFXMLLoader::class.java)
         val scene = Scene(
             AWSExplorerApplication::class.java.getResource("main-view.fxml")?.let { guiceFXMLLoader.load(it) },

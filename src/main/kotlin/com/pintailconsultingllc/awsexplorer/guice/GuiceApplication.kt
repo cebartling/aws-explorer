@@ -61,11 +61,6 @@ abstract class GuiceApplication : Application() {
         val additionalModules: List<Module> = ArrayList()
         init(additionalModules)
         modules.addAll(additionalModules)
-        val foo = object : Iterable<Module?> {
-            override fun iterator(): Iterator<Module?> {
-                return modules.iterator()
-            }
-        }
 
 //        injector = Guice.createInjector()
 

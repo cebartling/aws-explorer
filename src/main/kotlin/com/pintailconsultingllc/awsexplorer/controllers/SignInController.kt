@@ -1,5 +1,6 @@
 package com.pintailconsultingllc.awsexplorer.controllers
 
+import com.pintailconsultingllc.awsexplorer.AWSExplorerApplication
 import com.pintailconsultingllc.awsexplorer.services.IdentityService
 import com.pintailconsultingllc.awsexplorer.services.PreferencesService
 import jakarta.inject.Inject
