@@ -1,11 +1,12 @@
 package com.pintailconsultingllc.awsexplorer.controllers
 
+import jakarta.inject.Singleton
 import javafx.event.ActionEvent
 import javafx.fxml.FXML
 import javafx.scene.layout.AnchorPane
 import javafx.scene.layout.HBox
 
-
+@Singleton
 class MainController {
     @FXML
     lateinit var bottomStatusView: HBox

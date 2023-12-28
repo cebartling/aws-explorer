@@ -1,6 +1,7 @@
 package com.pintailconsultingllc.awsexplorer.services
 
 import jakarta.inject.Inject
+import jakarta.inject.Singleton
 import software.amazon.awssdk.auth.credentials.ProfileCredentialsProvider
 import software.amazon.awssdk.services.cloudformation.CloudFormationClient
 import software.amazon.awssdk.services.cloudformation.model.CloudFormationException
@@ -12,6 +13,7 @@ interface CloudFormationService {
     fun listStacks(): List<Stack>
 }
 
+@Singleton
 class CloudFormationServiceImpl : CloudFormationService {
 
     @Inject

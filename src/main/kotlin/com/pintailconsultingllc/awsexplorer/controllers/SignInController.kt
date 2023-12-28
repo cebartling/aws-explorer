@@ -1,13 +1,14 @@
 package com.pintailconsultingllc.awsexplorer.controllers
 
-import com.pintailconsultingllc.awsexplorer.AWSExplorerApplication
 import com.pintailconsultingllc.awsexplorer.services.IdentityService
 import com.pintailconsultingllc.awsexplorer.services.PreferencesService
 import jakarta.inject.Inject
+import jakarta.inject.Singleton
 import javafx.event.ActionEvent
 import javafx.fxml.FXML
 import javafx.scene.control.TextField
 
+@Singleton
 class SignInController {
 
     @FXML
